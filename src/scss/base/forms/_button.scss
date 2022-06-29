@@ -13,4 +13,15 @@
     transition: color $transitionSpeed $transitionFunction,
         background-color $transitionSpeed $transitionFunction,
         border $transitionSpeed $transitionFunction;
+
+    &--primary {
+        background: #33C1CC;
+        font-size: 15px;
+        line-height: math.div(24, 15);
+        color: $whiteColor;
+        padding: 11px 30px;
+        &:hover{
+            background: #0C669C;
+        }
+    }
 }

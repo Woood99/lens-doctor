@@ -1,1 +1,2 @@
-// import './components/asd';
+import './components/search';
+import './components/address';

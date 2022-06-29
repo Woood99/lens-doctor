@@ -1,0 +1,102 @@
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    width: percent(476, 1180);
+
+    &__btn {
+        font-size: 0;
+        line-height: 0;
+        position: relative;
+        z-index: 99;
+        height: 36px;
+        padding: 0 16px;
+        transition: opacity 0s $transitionFunction 0s,
+            visibility 0s $transitionFunction 0s;
+
+        &::before {
+            font-size: 20px;
+            line-height: 1;
+            color: #0F80C4;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100%);
+        position: absolute;
+        transition: opacity $transitionSpeed $transitionFunction,
+            visibility $transitionSpeed $transitionFunction,
+            transform $transitionSpeed $transitionFunction;
+    }
+
+    &--active {
+
+
+        .search-form {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+
+            &__btn {
+                opacity: 1;
+                visibility: visible;
+
+                transition: opacity 0s $transitionFunction 0.4s,
+                    visibility 0s $transitionFunction 0.4s;
+            }
+        }
+
+        .search__btn {
+            opacity: 0;
+            visibility: hidden;
+
+            transition: opacity 0s $transitionFunction 0.4s,
+                visibility 0s $transitionFunction 0.4s;
+        }
+    }
+}
+
+.search-form {
+    &__input {
+        width: 100%;
+        height: 36px;
+        padding: 0 52px 0 16px;
+        background-color: $whiteColor;
+        line-height: math.div(24, 14);
+        color: #6D768C;
+        border: 1px solid $whiteColor;
+
+        &::placeholder {
+            color: currentColor;
+        }
+
+        &:focus {
+            border: 1px solid $lightBlueColor;
+        }
+    }
+
+    &__btn {
+        padding: 0 16px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0;
+        line-height: 0;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0s $transitionFunction 0s,
+            visibility 0s $transitionFunction 0s;
+
+        &::before {
+            font-size: 20px;
+            line-height: 1;
+            color: #0F80C4;
+        }
+    }
+}

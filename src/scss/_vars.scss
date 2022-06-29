@@ -1,0 +1,44 @@
+// main
+$fontFamily: "Muller";
+$fontSize: 14;
+$minWidth: 320;
+$maxWidth: 1920;
+$contentWidth: 1290;
+$containerOffset: 15;
+$containerWidth: calc($contentWidth + ($containerOffset * 2));
+
+
+
+// main colors
+$bodyColor: #fff;
+$mainColor: #000; // Цвет шрифта по умолчанию
+
+
+// additional colors
+$blackColor: #1B1D32;
+$blackSecondaryColor: #2A2651;
+$whiteColor: #fff;
+$lightBlueColor: #39B6C0;
+$kimberlyColor: #757AA4;
+$wildBlueColor: #7E83AE;
+
+
+
+// others vars
+$transitionSpeed: 0.3s;
+$transitionFunction: ease-in-out;
+
+
+
+
+
+
+
+// break points
+$desktop: $containerWidth+px;
+$tablet: 1024px;
+$smallTablet: 768px;
+$mobile: 576px;
+
+
+

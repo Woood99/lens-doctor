@@ -1,0 +1,91 @@
+%ic {
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class*="icon-"] {
+    &:before {
+        @extend %ic;
+        display: block;
+    }
+}
+
+
+
+// ====================================================================================
+
+
+
+.icon-arrow-up:before {
+    content: "\e900";
+}
+
+.icon-calendar:before {
+    content: "\e901";
+}
+
+.icon-cart:before {
+    content: "\e902";
+}
+
+.icon-fb:before {
+    content: "\e903";
+}
+
+.icon-inst:before {
+    content: "\e904";
+}
+
+.icon-play:before {
+    content: "\e905";
+}
+
+.icon-plus:before {
+    content: "\e906";
+}
+
+.icon-search:before {
+    content: "\e907";
+}
+
+.icon-star:before {
+    content: "\e908";
+}
+
+.icon-telegram:before {
+    content: "\e909";
+}
+
+.icon-telegram-fill:before {
+    content: "\e90a";
+}
+
+.icon-triagle-arrow-down:before {
+    content: "\e90b";
+}
+
+.icon-vk:before {
+    content: "\e90c";
+}
+
+.icon-whatsapp:before {
+    content: "\e90d";
+}
+
+.icon-whatsapp-fill:before {
+    content: "\e90e";
+}
+
+.icon-arrow-down:before {
+    content: "\e90f";
+}
+
+.icon-arrow-right:before {
+    content: "\e910";
+}

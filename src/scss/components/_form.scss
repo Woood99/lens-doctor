@@ -1,0 +1,97 @@
+.form-primary {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        text-align: center;
+        font-weight: 500;
+        @include adaptiveValue("font-size", 20, 18);
+        line-height: math.div(36, 20);
+        color: $blackColor;
+    }
+
+    &__label {
+        position: relative;
+    }
+
+    &__input {
+        width: 100%;
+        background: rgba(201, 210, 234, 0.1);
+        box-shadow: inset 0px 4px 4px rgba(201, 210, 234, 0.29);
+        border-radius: 6px;
+        height: 50px;
+        border: none;
+        line-height: math.div(26, 16);
+        color: #7E83AE;
+        @include adaptiveValue("font-size", 16, 14);
+        margin-top: 20px;
+        padding: 0 20px;
+
+        &.just-validate-error-field {
+            border: 1px solid rgba(204, 51, 51, 0.3);
+        }
+
+        &+.just-validate-error-label {
+            font-size: 14px;
+            color: #FC3F1D;
+            margin-top: 5px;
+
+            @media (max-width:$mobile) {
+                font-size: 12px;
+            }
+        }
+
+        &::placeholder {
+            color: #7E83AE;
+        }
+
+        @media (max-width:$smallTablet) {
+            height: 46px;
+            margin-top: 15px;
+        }
+    }
+
+    &__label--calendar {
+        display: inline-block;
+        position: relative;
+
+        &::before {
+            font-size: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #39B6C0
+        }
+    }
+
+    &__btn {
+        font-size: 16px;
+        line-height: math.div(16, 16);
+        margin-top: 30px;
+        align-self: center;
+        padding: 18px 77px 17px;
+
+        @media (max-width:$mobile) {
+            font-size: 14px;
+            margin-top: 15px;
+            padding: 15px 30px;
+            align-self: stretch;
+        }
+    }
+
+    &__agreement {
+        text-align: center;
+        margin-top: 15px;
+        @include adaptiveValue("font-size", 12, 10);
+        line-height: math.div(12, 12);
+        color: #7E83AE;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width:$smallTablet) {
+            margin-top: 10px;
+        }
+    }
+}

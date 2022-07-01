@@ -10,7 +10,9 @@ import { enableScroll } from '../functions/enable-scroll';
   burger?.addEventListener('click', (e) => {
     burger?.classList.toggle('burger--active');
     menu?.classList.toggle('menu--active');
-
+    document.querySelectorAll('.nav-dropdown__box').forEach(el => {
+      el.classList.remove('active');
+    })
     if (menu?.classList.contains('menu--active')) {
       burger?.setAttribute('aria-expanded', 'true');
       burger?.setAttribute('aria-label', 'Закрыть меню');
@@ -37,6 +39,9 @@ import { enableScroll } from '../functions/enable-scroll';
       burger.classList.remove('burger--active');
       menu.classList.remove('menu--active');
       enableScroll();
+      document.querySelectorAll('.nav-dropdown__box').forEach(el => {
+        el.classList.remove('active');
+      })
     });
   });
 })();

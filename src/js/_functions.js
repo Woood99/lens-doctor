@@ -24,7 +24,7 @@
 
 
 // Реализация бургер-меню
-// import { burger } from './functions/burger';
+import { burger } from './functions/burger';
 
 
 // ========================================================================================
@@ -41,8 +41,8 @@
 
 
 // Реализация модального окна
-// import GraphModal from 'graph-modal';
-// const modal = new GraphModal();
+import GraphModal from 'graph-modal';
+const modal = new GraphModal();
 
 
 // ========================================================================================
@@ -57,8 +57,8 @@
 
 
 // Получение высоты шапки сайта (не забудьте вызвать функцию)
-// import { getHeaderHeight } from './functions/header-height';
-// getHeaderHeight();
+import { getHeaderHeight } from './functions/header-height';
+getHeaderHeight();
 
 
 // ========================================================================================
@@ -121,14 +121,43 @@
 // ========================================================================================
 
 
-// import { validateForms } from './functions/validate-forms';
-// const rules1 = [...];
+import {
+    validateForms
+} from './functions/validate-forms';
 
-// const afterForm = () => {
-//   console.log('Произошла отправка, тут можно писать любые действия');
-// };
+if (document.querySelector('.back-call-form')) {
+    const backCallForm_rules = [{
+            ruleSelector: '.back-call-form__name',
+            rules: [{
+                    rule: 'minLength',
+                    value: 3,
+                    errorMessage: 'Имя должно состоять минимум из 3 букв'
+                },
+                {
+                    rule: 'required',
+                    value: true,
+                    errorMessage: 'Заполните имя!'
+                }
+            ]
+        },
+        {
+            ruleSelector: '.back-call-form__phone',
+            tel: true,
+            telError: 'Введите корректный телефон',
+            rules: [{
+                rule: 'required',
+                value: true,
+                errorMessage: 'Заполните телефон!'
+            }]
+        },
+    ];
 
-// validateForms('.form-1', rules1, afterForm);
+    const afterForm = () => {
+        console.log('Произошла отправка, тут можно писать любые действия');
+    };
+
+    validateForms('.back-call-form', backCallForm_rules, afterForm);
+}
 
 
 
@@ -192,14 +221,22 @@
 
 
 /* Динамический адаптив */
-// import "./functions/dynamic-adapt";
+import "./functions/dynamic-adapt";
 
 
 // ========================================================================================
 
 
 // Фикс фулскрин-блоков
-// import './functions/fix-fullheight';
+import './functions/fix-fullheight';
 
 
 // ========================================================================================
+
+
+import AirDatepicker from 'air-datepicker';
+document.querySelectorAll('.form-primary__calendar').forEach(el => {
+    new AirDatepicker(el, {
+
+    });
+});

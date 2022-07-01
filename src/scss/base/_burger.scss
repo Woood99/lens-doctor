@@ -1,63 +1,82 @@
 .burger {
-    --burger-width: 30px;
-    --burger-height: 30px;
-    --burger-line-height: 2px;
-
-    position: relative;
     border: none;
     padding: 0;
-    width: var(--burger-width);
-    height: var(--burger-height);
-    color: #000;
-    background-color: transparent;
+    align-items: center;
+    background-color: $whiteColor;
+    padding: 9px 15px;
     cursor: pointer;
 
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: var(--burger-line-height);
-        background-color: currentColor;
-        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-    }
+    &__box {
 
-    &::before {
-        top: 0;
-    }
+        --burger-width: 22px;
+        --burger-height: 14px;
+        --burger-line-height: 2px;
 
-    &::after {
-        top: calc(100% - var(--burger-line-height));
-    }
+        position: relative;
+        width: var(--burger-width);
+        height: var(--burger-height);
+        color: #028ECE;
 
-    &__line {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        width: 100%;
-        height: var(--burger-line-height);
-        background-color: currentColor;
-        transform: translateY(-50%);
-        transition: transform 0.3s ease-in-out;
-    }
-
-    &--active {
-        &::before {
-            top: 50%;
-            transform: rotate(45deg);
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: var(--burger-line-height);
+            background-color: currentColor;
             transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        &::before {
+            top: 0;
         }
 
         &::after {
-            top: 50%;
-            transform: rotate(-45deg);
-            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+            top: calc(100% - var(--burger-line-height));
         }
 
         .burger__line {
-            transform: scale(0);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: var(--burger-line-height);
+            background-color: currentColor;
+            transform: translateY(-50%);
             transition: transform 0.3s ease-in-out;
+            border-radius: 10px;
         }
+    }
+
+    &.burger--active {
+        .burger__box {
+            &::before {
+                top: 50%;
+                transform: rotate(45deg);
+                transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+            }
+
+            &::after {
+                top: 50%;
+                transform: rotate(-45deg);
+                transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+            }
+
+            .burger__line {
+                transform: scale(0);
+                transition: transform 0.3s ease-in-out;
+            }
+        }
+    }
+
+    >span {
+        font-size: 15px;
+        color: #2A2651;
+        display: block;
+        margin-left: 15px;
+        position: relative;
+        top: 2px;
     }
 }

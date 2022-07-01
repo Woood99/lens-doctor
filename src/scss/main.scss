@@ -7,7 +7,7 @@
 @import "fonts";
 @import "settings";
 @import "common";
-
+@import "./components/popup";
 
 // big components
 @import "./components/header";
@@ -18,3 +18,8 @@
 
 // small components
 @import "./components/search";
+@import "./components/social";
+@import "./components/logo";
+@import "./components/back-call";
+@import "./components/form";
+@import "./components/nav";

@@ -4,10 +4,25 @@
         background: #F1F3F7;
     }
 
-    &__body {}
+    &__body {
+        background: $whiteColor;
+        box-shadow: 0px 2px 10px rgba(78, 127, 222, 0.2);
+    }
 
-    &__bottom {}
+    &__bottom {
+        margin-top: 15px;
+        background: $whiteColor;
+        height: 44px;
+
+        @media (max-width:$burgerMenuPx) {
+            background: #F1F3F7;
+        }
+    }
 }
+
+
+// ==================================================================================================
+
 
 .header-top {
     &__inner {
@@ -15,10 +30,6 @@
         grid-template-columns: max-content 1fr;
         align-items: center;
     }
-
-    &__left {}
-
-    &__address {}
 
     &__right {
         display: flex;
@@ -28,6 +39,9 @@
 
     &__search {
         margin-right: 18px;
+        @media (max-width:$smallTablet){
+             margin-right: 0; 
+        }
     }
 
     &__cart {
@@ -42,8 +56,6 @@
         }
     }
 }
-
-
 
 
 .header-address {
@@ -86,6 +98,7 @@
     }
 
     &__list {
+        z-index: 99;
         position: absolute;
         top: calc(100% - 5px);
 
@@ -105,12 +118,20 @@
             opacity: 1;
             visibility: visible;
         }
+        @media (max-width:$smallTablet){
+             left: 70%;
+             transform: translateX(-70%); 
+             top: 100%;
+        }
     }
 
     &__item {
         &:not(:first-child) {
             margin-top: 20px;
         }
+    }
+    @media (max-width:$smallTablet){
+        margin-left: auto;  
     }
 }
 
@@ -140,5 +161,234 @@
 
     &__descr {
         color: $wildBlueColor;
+    }
+}
+
+
+// ==================================================================================================
+
+
+
+.header-body {
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+
+    &__logo {}
+
+    &__btn {
+        @include adaptiveValue("margin-left", 155, 20, $contentWidth, $burgerMenu, 1);
+    }
+
+    &__schedule {
+        margin-left: auto;
+        padding-left: 20px;
+        @include adaptiveValue("margin-right", 65, 40, $contentWidth, $burgerMenu, 1);
+        color: $blackSecondaryColor;
+        @include adaptiveValue("font-size",15 ,12 );
+        line-height: math.div(24, 15);
+        @media (max-width:$burgerMenuPx) {
+          padding: 0;
+          margin: 0;
+          color: $whiteColor;
+        }
+    }
+
+    &__back-call {
+        @media (max-width:$burgerMenuPx) {
+            margin-left: auto;
+        }
+    }
+}
+
+
+// ==================================================================================================
+
+
+
+.header-bottom {
+
+    &__inner {
+        position: relative;
+        height: 100%;
+
+        @media (max-width:$burgerMenuPx) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__nav {
+        height: 100%;
+    }
+}
+
+
+
+.nav-dropdown {
+    &__btn {
+        font-size: 17px;
+        line-height: math.div(24, 17);
+        font-weight: 500;
+        color: $blackColor;
+
+        &--arrow {
+            padding-right: 16px;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                font-size: 6px;
+                color: #028ECE;
+                display: block;
+                transition: transform $transitionSpeed $transitionFunction;
+            }
+        }
+
+        @media (max-width:$burgerMenuPx) {
+            width: 100%;
+            color: $whiteColor;
+            font-size: 15px;
+            padding: 8px 20px 8px;
+
+            &--arrow {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &::before {
+                    color: $whiteColor;
+                    transform: translateY(-50%) rotate(-90deg);
+                    right: 20px;
+                }
+            }
+        }
+    }
+
+    &__box {
+        z-index: 999;
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 44px;
+        left: 0;
+        background: $whiteColor;
+        border-radius: 6px;
+        filter: drop-shadow(0px 2px 20px rgba(78, 127, 222, 0.2));
+        padding: 35px 60px 30px;
+        transition: opacity $transitionSpeed $transitionFunction,
+            visibility $transitionSpeed $transitionFunction;
+
+        @media (max-width:$burgerMenuPx) {
+            transform: translateX(-100%);
+            transition: opacity $transitionSpeed $transitionFunction,
+                visibility $transitionSpeed $transitionFunction,
+                transform $transitionSpeed $transitionFunction;
+            flex-direction: column;
+            top: 0;
+            background: #0C669C;
+            width: 100%;
+border-radius: 0;
+padding: 0;
+padding-top: 20px;
+            &.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__column {
+        @media (min-width:$burgerMenuPx) {
+            &:not(:last-child) {
+                margin-right: 120px;
+            }
+        }
+        @media (max-width:$burgerMenuPx){
+              display: flex;
+              flex-direction: column;
+        }
+    }
+
+    &__back {
+        display: none;
+        color: $whiteColor;
+        font-weight: 500;
+font-size: 15px;
+line-height: math.div(24 ,15 );
+align-items: center;
+position: relative;
+
+padding: 12px 40px 8px;
+background: rgba(27, 29, 50, 0.26);
+margin-bottom: 5px;
+&::before{
+    font-size: 6px;
+    color: $whiteColor;
+   position: absolute;
+   top: calc(50% - 2px);
+   left: 20px;
+   transform: translateY(-50%) rotate(90deg);
+   line-height: 1;
+}
+
+        @media (max-width:$burgerMenuPx) {
+display: flex;
+        }
+    }
+
+    &__item {}
+
+    &__link {
+        font-size: 14px;
+
+        color: $blackColor;
+        transition: color $transitionSpeed $transitionFunction;
+        padding: 10px 0;
+        position: relative;
+
+        @media (min-width:$burgerMenuPx) {
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 8px;
+                left: 0;
+                display: block;
+                width: 100%;
+                border-bottom: 1px dashed currentColor;
+            }
+
+            &:hover {
+                color: #0C669C;
+            }
+        }
+        @media (max-width:$burgerMenuPx) {
+            color: $whiteColor;
+            padding: 8px 20px 8px
+        }
+    }
+
+    @media (min-width:$burgerMenuPx) {
+        &:hover {
+            .nav-dropdown__box {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-dropdown__btn--arrow {
+                &::before {
+                    transform: translateY(-50%) rotate(180deg);
+                }
+            }
+        }
     }
 }

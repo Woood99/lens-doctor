@@ -290,7 +290,7 @@
         padding: 35px 60px 30px;
         transition: opacity $transitionSpeed $transitionFunction,
             visibility $transitionSpeed $transitionFunction;
-
+        width: 100%;
         @media (max-width:$burgerMenuPx) {
             transform: translateX(-100%);
             transition: opacity $transitionSpeed $transitionFunction,
@@ -299,7 +299,6 @@
             flex-direction: column;
             top: 0;
             background: #0C669C;
-            width: 100%;
             border-radius: 0;
             padding: 0;
             padding-top: 20px;

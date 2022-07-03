@@ -79,6 +79,10 @@ DynamicAdapt.prototype.moveTo = function (place, element, destination) {
         destination.insertAdjacentElement('afterbegin', element);
         return;
     }
+    if (place === 'heroLast') {
+        element.closest('.hero-slide__inner').insertAdjacentElement('beforeend', element);
+        return;
+    }
     destination.children[place].insertAdjacentElement('beforebegin', element);
 }
 // Функция возврата

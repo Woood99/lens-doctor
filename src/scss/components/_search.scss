@@ -41,7 +41,6 @@
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(0);
-
                 &__btn {
                     opacity: 1;
                     visibility: visible;
@@ -145,6 +144,7 @@
         visibility: hidden;
         transition: opacity $transitionSpeed $transitionFunction,
         visibility $transitionSpeed $transitionFunction;
+        z-index: 9999;
         &__input {
             width: 100%;
             height: 46px;

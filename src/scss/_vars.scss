@@ -6,7 +6,7 @@ $maxWidth: 1920;
 $contentWidth: 1290;
 $containerOffset: 15;
 $containerWidth: calc($contentWidth + ($containerOffset * 2));
-
+$containerBig: calc(1920 + ($containerOffset * 2));
 
 
 // main colors

@@ -58,7 +58,7 @@
         transition: opacity $transitionSpeed $transitionFunction,
             visibility $transitionSpeed $transitionFunction,
             transform $transitionSpeed $transitionFunction;
-
+        z-index: 999;
         &.menu--active {
             opacity: 1;
             visibility: visible;

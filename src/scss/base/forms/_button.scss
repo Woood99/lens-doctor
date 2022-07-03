@@ -22,6 +22,12 @@
         color: $whiteColor;
         padding: 11px 30px;
 
+        &-icon {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
         &:hover {
             background: #0C669C;
         }

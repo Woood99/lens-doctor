@@ -46,15 +46,15 @@ function initSliders() {
                 // lazy: true,
 
 
-                // pagination: {
-                // 	el: '.slider-quality__pagging',
-                // 	clickable: true,
-                // },
+                pagination: {
+                    el: el.closest('.hero').querySelector('.hero__pagination'),
+                	clickable: true,
+                },
 
-                // navigation: {
-                //     nextEl: '.about__more .more__item_next',
-                //     prevEl: '.about__more .more__item_prev',
-                // },
+                navigation: {
+                    nextEl: el.closest('.hero').querySelector('.hero-nav-next'),
+                    prevEl: el.closest('.hero').querySelector('.hero-nav-prev'),
+                },
 
                 /*
                 breakpoints: {

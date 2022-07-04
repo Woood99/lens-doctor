@@ -144,7 +144,7 @@
         visibility: hidden;
         transition: opacity $transitionSpeed $transitionFunction,
         visibility $transitionSpeed $transitionFunction;
-        z-index: 9999;
+        z-index: 998;
         &__input {
             width: 100%;
             height: 46px;

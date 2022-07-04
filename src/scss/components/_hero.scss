@@ -1,10 +1,23 @@
 .hero {
     height: 638px;
     background: linear-gradient(90deg, #0C669C 0%, #3BBAC2 100%);
-
     &__inner {
+        position: relative;
+        padding: 0;
+
         @media (min-width:$smallTablet) {
             height: 100%;
+        }
+    }
+
+    &__content {
+        @media (min-width:$smallTablet) {
+            height: 100%;
+        }
+        @media (min-width:$tablet){
+            margin: 0 auto;
+            padding: 0 15px;
+            max-width: 1320px 
         }
     }
 
@@ -12,8 +25,8 @@
         @media (min-width:$smallTablet) {
             height: 100%;
         }
-        @media (max-width:$smallTablet){
-             height: 590px; 
+        @media (max-width:$smallTablet) {
+            height: 590px;
         }
     }
 
@@ -26,6 +39,7 @@
     &__slide {
         background-position: bottom 0 right -75px;
         background-repeat: no-repeat;
+
         @media (min-width:$smallTablet) {
             &--1 {
                 background-position: bottom -30px right -50px;
@@ -44,9 +58,9 @@
                 background-position: bottom right -70%;
             }
         }
-        @media (max-width:$tablet){
-            background-position: bottom right -50px;
-            background-size: contain;
+
+        @media (max-width:$tablet) {
+            background-image: none !important;
         }
     }
 
@@ -55,7 +69,7 @@
     &__navigation {}
 
     @media (max-width:$smallTablet) {
-       height: 590px;
+        height: 590px;
     }
 }
 
@@ -63,14 +77,30 @@
     @media (min-width:$smallTablet) {
         height: 100% !important;
     }
-
+    position: relative;
     overflow: hidden;
-
+    &__mobile-img{
+        display: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        width: 65%;
+        min-width: 500px;
+        object-fit: contain;
+        @media (max-width:$tablet){
+            display: block;
+        }
+        @media (max-width:$mobile){
+             right: -45%;
+        }
+    }
     &__inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 100%;
+
         @media (max-width:$smallTablet) {
             flex-direction: column;
             align-items: start;
@@ -130,7 +160,7 @@
 
         @media (max-width:$smallTablet) {
             font-size: 13px;
-            padding: 16px 30px;
+            padding: 16px 53px 16px 30px;
 
             &::before {
                 font-size: 8px;

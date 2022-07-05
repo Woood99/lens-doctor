@@ -1,0 +1,289 @@
+.service {
+    @include adaptiveValue("margin-top", 120, 60);
+
+    &__title {}
+
+    &__inner {
+        margin-top: 40px;
+
+        @media (max-width:$smallTablet) {
+            margin-top: 30px;
+        }
+    }
+
+    &__bottom {
+        margin-top: 30px;
+    }
+}
+
+.service-top {
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+
+        @media (max-width:$tablet) {
+            grid-gap: 15px;
+        }
+
+        @media (max-width:$smallTablet) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        position: relative;
+    }
+}
+
+.service-top-item {
+    transition: box-shadow $transitionSpeed $transitionFunction;
+
+    &--1 {
+        background-color: #1A80A8;
+    }
+
+    &--2 {
+        background-color: #0C669C;
+    }
+
+    &__inner {
+        height: 100%;
+        color: $whiteColor;
+        padding: 45px 230px 45px 40px;
+        flex: 0 0 percent(400, 630);
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, max-content);
+        position: relative;
+        z-index: 2;
+
+        @media (max-width:$tablet) {
+            padding: 30px 130px 30px 25px;
+        }
+
+        @media (max-width:$smallTablet) {
+            padding-right: 40%;
+        }
+
+        @media (max-width:$smallTablet) {
+            padding-right: 85px;
+        }
+    }
+
+
+    &__title {
+        font-weight: 500;
+        @include adaptiveValue("font-size", 24, 18);
+        line-height: math.div(26, 24);
+
+    }
+
+    &__descr {
+        margin-top: 20px;
+        @include adaptiveValue("font-size", 14, 12);
+        line-height: math.div(24, 14);
+    }
+
+    &__btn {
+        margin-top: 40px;
+        justify-self: start;
+        align-self: end;
+        font-size: 14px;
+        line-height: math.div(16, 14);
+        padding: 15px 57px 15px 30px;
+        border-radius: 6px;
+
+        &::before {
+            font-size: 10px;
+            position: absolute;
+            right: 30px;
+        }
+
+        &:hover {
+            background-color: $whiteColor;
+            color: #39B6C0;
+        }
+
+        @media (max-width:$smallTablet) {}
+
+        @media (max-width:$mobile) {
+            font-size: 13px;
+            line-height: math.div(16, 13);
+            padding: 13px 40px 12px 20px;
+            border-radius: 3px;
+
+            &::before {
+                font-size: 8px;
+                right: 20px;
+            }
+        }
+    }
+
+    &__img {
+        max-width: 200px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+
+        img {
+            display: block;
+        }
+
+        @media (max-width:$smallTablet) {
+            max-width: 150px;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0px 8px 10px rgba(2, 142, 206, 0.32);
+
+        @media (min-width:$smallTablet) {
+            .service-top-item__title {
+                text-decoration: underline dashed currentColor;
+            }
+        }
+    }
+}
+
+
+
+.service-bottom {
+
+    &__slider {
+        @media (max-width:$mobile) {
+            margin-right: -15px;
+            padding-right: 15px;
+        }
+
+        margin-bottom: -15px;
+        padding-bottom: 15px;
+    }
+
+    &__slide {
+        height: auto;
+        transition: box-shadow $transitionSpeed $transitionFunction;
+        box-shadow: 0px 2px 20px rgba(78, 127, 222, 0.2);
+        border-radius: 6px;
+     
+
+        &:hover {
+            box-shadow: 0px 8px 10px rgba(2, 142, 206, 0.32);
+
+            .service-bottom-slide__title {
+                &::before {
+                    opacity: 1;
+                }
+            }
+            .service-bottom-slide__link {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.service-bottom-slide {
+    &--1 {
+        background-color: #218CAD;
+    }
+
+    &--2 {
+        background-color: #197299;
+    }
+
+    &--3 {
+        background-color: #31A9BA;
+    }
+
+    &__inner {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+     padding: 40px 40px 30px;
+       box-sizing: border-box;
+        @media (max-width:$smallTablet) {
+             padding: 30px 25px; 
+        }
+    }
+
+    &__content {
+        height: 100%;
+        color: $whiteColor;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, max-content);
+        @media (max-width:$smallTablet){
+          
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 1;
+        padding-bottom: 5px;
+        position: relative;
+        justify-self: start;
+
+        &::before {
+            content: "";
+            opacity: 0;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-bottom: 1px dashed currentColor;
+        }
+
+        @media (max-width:$smallTablet) {
+            font-size: 16px;
+        }
+    }
+
+    &__descr {
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: math.div(24, 14);
+
+        @media (max-width:$smallTablet) {
+            margin-top: 5px;
+            font-size: 12px;
+        }
+    }
+
+    &__link {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $transitionSpeed $transitionFunction,
+            visibility $transitionSpeed $transitionFunction;
+        align-self: end;
+        margin-top: 30px;
+
+        &::before {
+            font-size: 10px;
+            color: $whiteColor;
+        }
+      @media (max-width:$smallTablet){
+         display: none; 
+      }
+    }
+
+    &__icon {
+        margin-left: 15px;
+        flex: 0 0 60px;
+        width: 60px;
+        height: 60px;
+        display: block;
+        fill: $whiteColor;
+
+        @media (max-width:$smallTablet) {
+            flex: 0 0 30px;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

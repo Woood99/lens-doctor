@@ -13,7 +13,8 @@
     transition: color $transitionSpeed $transitionFunction,
         background-color $transitionSpeed $transitionFunction,
         border $transitionSpeed $transitionFunction,
-        background $transitionSpeed $transitionFunction;
+        background $transitionSpeed $transitionFunction,
+        box-shadow $transitionSpeed $transitionFunction;
 
     &--primary {
         background: #33C1CC;

@@ -6,8 +6,9 @@ import Swiper, {
     Navigation,
     Pagination,
     EffectFade,
+    Thumbs,
 } from 'swiper';
-Swiper.use([Navigation, Pagination, EffectFade]);
+Swiper.use([Navigation, Pagination, EffectFade, Thumbs]);
 
 
 
@@ -95,7 +96,7 @@ function initSliders() {
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1.15,
-                spaceBetween: 10, 
+                spaceBetween: 10,
                 speed: 800,
                 // touchRatio: 0,
                 // simulateTouch: false,
@@ -118,9 +119,9 @@ function initSliders() {
                 breakpoints: {
                     576: {
                         slidesPerView: 2,
-                        spaceBetween: 15, 
+                        spaceBetween: 15,
                     },
-                    1024:{
+                    1024: {
                         slidesPerView: 3,
                         spaceBetween: 30,
                     }
@@ -134,7 +135,56 @@ function initSliders() {
         });
     }
 
+    function ourDoctorsSlider(ourDoctorsInner) {
+        const nav = ourDoctorsInner.querySelector('.our-doctors-nav__slider');
+        const body = ourDoctorsInner.querySelector('.our-doctors-body__slider');
+        let navSlider = new Swiper(nav, {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            observer: true,
+            observeParents: true,
+            freeMode: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            direction: 'horizontal',
+            breakpoints: {
+                901: {
+                    direction: 'vertical',
+                    spaceBetween: 15,
+                }
+            },
+        });
+        let bodySlider = new Swiper(body, {
+            spaceBetween: 10,
+            observer: true,
+            observeParents: true,
+            navigation: {
+                prevEl: ourDoctorsInner.querySelector('.our-doctors__navigation--prev'),
+                nextEl: ourDoctorsInner.querySelector('.our-doctors__navigation--next'),
+            },
+            pagination: {
+                el:  ourDoctorsInner.querySelector('.our-doctors__pagination'),
+                type: 'fraction',
+            },
+            thumbs: {
+                swiper: navSlider,
+            },
+        })
+    }
+    if (document.querySelector('.our-doctors__inner')) {
+        document.querySelectorAll('.our-doctors__inner').forEach(el => {
+            ourDoctorsSlider(el);
+        });
+    }
+
+
+
+
+
+
+
 }
+
 
 
 

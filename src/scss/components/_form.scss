@@ -11,6 +11,7 @@
     }
 
     &__label {
+        margin-top: 20px;
         position: relative;
     }
 
@@ -20,11 +21,9 @@
         box-shadow: inset 0px 4px 4px rgba(201, 210, 234, 0.29);
         border-radius: 6px;
         height: 50px;
-        border: none;
         line-height: math.div(26, 16);
         color: #7E83AE;
         @include adaptiveValue("font-size", 16, 14);
-        margin-top: 20px;
         padding: 0 20px;
 
         &.just-validate-error-field {
@@ -54,12 +53,13 @@
     &__label--calendar {
         display: inline-block;
         position: relative;
-
+        max-height: 50px;
         &::before {
             font-size: 20px;
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
             color: #39B6C0
         }
     }
@@ -81,17 +81,11 @@
 
     &__agreement {
         text-align: center;
-        margin-top: 15px;
         @include adaptiveValue("font-size", 12, 10);
         line-height: math.div(12, 12);
         color: #7E83AE;
-
-        &:hover {
+        span{
             text-decoration: underline;
-        }
-
-        @media (max-width:$smallTablet) {
-            margin-top: 10px;
         }
     }
 }

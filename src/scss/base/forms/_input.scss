@@ -4,7 +4,7 @@
     border-radius: 0;
     background-color: #fff;
     padding: 0;
-    border: 1px solid green;
+    border: 1px solid transparent;
 
     &::-webkit-search-decoration,
     &::-webkit-search-cancel-button,
@@ -15,6 +15,7 @@
 
     &:focus {
         outline: none;
+        border: 1px solid rgba(51, 193, 204, 0.3);
     }
 }
 

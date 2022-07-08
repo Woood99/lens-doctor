@@ -29,7 +29,7 @@
 
 
 // стили для simplebar
-// @import "../../node_modules/simplebar/dist/simplebar.min";
+@import "../../node_modules/simplebar/dist/simplebar.min";
 
 
 // ================================================================================
@@ -68,6 +68,11 @@
 
 
 
+// стили для air-datepicked
+@import "../../node_modules/choices.js/src/styles/choices.scss";
+
+
+// ================================================================================
 
 
 

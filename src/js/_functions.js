@@ -10,7 +10,11 @@
 
 
 // Определение ширины экрана
-// import { isMobile, isTablet, isDesktop } from './functions/check-viewport';
+import {
+    isMobile,
+    isTablet,
+    isDesktop
+} from './functions/check-viewport';
 // if (isDesktop()) {
 //   console.log('desktop')
 // } else if (isTablet()) {
@@ -24,7 +28,9 @@
 
 
 // Реализация бургер-меню
-import { burger } from './functions/burger';
+import {
+    burger
+} from './functions/burger';
 
 
 // ========================================================================================
@@ -57,16 +63,17 @@ const modal = new GraphModal();
 
 
 // Получение высоты шапки сайта (не забудьте вызвать функцию)
-import { getHeaderHeight } from './functions/header-height';
+import {
+    getHeaderHeight
+} from './functions/header-height';
 getHeaderHeight();
 window.addEventListener('resize', getHeaderHeight);
 
 // ========================================================================================
 
 
-// Подключение плагина кастом-скролла
-// import 'simplebar';
 
+// import SimpleBar from 'simplebar';
 
 // ========================================================================================
 
@@ -121,9 +128,9 @@ import {
     validateForms
 } from './functions/validate-forms';
 
-if (document.querySelector('.back-call-form')) {
-    const backCallForm_rules = [{
-            ruleSelector: '.back-call-form__name',
+if (document.querySelector('.reception-form__inner')) {
+    const receptionFormRules = [{
+            ruleSelector: '.reception-form__input--name',
             rules: [{
                     rule: 'minLength',
                     value: 3,
@@ -137,7 +144,53 @@ if (document.querySelector('.back-call-form')) {
             ]
         },
         {
-            ruleSelector: '.back-call-form__phone',
+            ruleSelector: '.reception-form__input--tel',
+            tel: true,
+            telError: 'Введите корректный телефон',
+            rules: [{
+                rule: 'required',
+                value: true,
+                errorMessage: 'Заполните телефон!'
+            }]
+        },
+        {
+            ruleSelector: '.reception-form__input--calendar',
+            rules: [{
+                rule: 'required',
+            }]
+        },
+        {
+            ruleSelector: '.reception-form__select',
+            rules: [{
+                rule: 'required',
+            }]
+        },
+    ];
+
+    const afterForm = () => {
+        console.log('Произошла отправка, тут можно писать любые действия');
+    };
+
+    validateForms('.reception-form__inner', receptionFormRules, afterForm);
+}
+
+if (document.querySelector('.back-call-form')) {
+    const backCallForm = [{
+            ruleSelector: '.back-call-form__input--name',
+            rules: [{
+                    rule: 'minLength',
+                    value: 3,
+                    errorMessage: 'Имя должно состоять минимум из 3 букв'
+                },
+                {
+                    rule: 'required',
+                    value: true,
+                    errorMessage: 'Заполните имя!'
+                }
+            ]
+        },
+        {
+            ruleSelector: '.back-call-form__input--tel',
             tel: true,
             telError: 'Введите корректный телефон',
             rules: [{
@@ -152,7 +205,7 @@ if (document.querySelector('.back-call-form')) {
         console.log('Произошла отправка, тут можно писать любые действия');
     };
 
-    validateForms('.back-call-form', backCallForm_rules, afterForm);
+    validateForms('.back-call-form', backCallForm, afterForm);
 }
 
 
@@ -231,8 +284,29 @@ import './functions/fix-fullheight';
 
 
 import AirDatepicker from 'air-datepicker';
-document.querySelectorAll('.form-primary__calendar').forEach(el => {
+document.querySelectorAll('.form-primary__input--calendar').forEach(el => {
     new AirDatepicker(el, {
-
+        autoClose: true,
+        isMobile: true,
     });
 });
+
+
+// ========================================================================================
+
+
+import Choices from 'choices.js';
+
+
+
+function receptionFormSelect() {
+    let receptionSelect = document.querySelector('.reception-form__select');
+    new Choices(receptionSelect, {
+        searchEnabled: false,
+        maxItemCount: 3,
+        itemSelectText: 'Выбрать',
+        shouldSort: false,
+        position: 'bottom',
+    });
+}
+receptionFormSelect();

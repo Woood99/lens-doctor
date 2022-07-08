@@ -8,6 +8,7 @@
 @import "settings";
 @import "common";
 @import "./components/popup";
+@import "./components/form";
 
 // big components
 @import "./components/header";
@@ -15,6 +16,7 @@
 @import "./components/service";
 @import "./components/diseases";
 @import "./components/our-doctors";
+@import "./components/reception";
 @import "./components/footer";
 
 
@@ -24,5 +26,5 @@
 @import "./components/social";
 @import "./components/logo";
 @import "./components/back-call";
-@import "./components/form";
 @import "./components/nav";
+@import "./components/select";

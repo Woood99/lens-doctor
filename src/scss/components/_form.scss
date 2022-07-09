@@ -51,9 +51,11 @@
     }
 
     &__label--calendar {
+        cursor: pointer;
         display: inline-block;
         position: relative;
         max-height: 50px;
+
         &::before {
             font-size: 20px;
             position: absolute;
@@ -62,6 +64,10 @@
             right: 20px;
             color: #39B6C0
         }
+    }
+
+    &__input--calendar {
+        cursor: pointer;
     }
 
     &__btn {
@@ -80,11 +86,13 @@
     }
 
     &__agreement {
+        margin-top: 20px;
         text-align: center;
         @include adaptiveValue("font-size", 12, 10);
         line-height: math.div(12, 12);
         color: #7E83AE;
-        span{
+
+        span {
             text-decoration: underline;
         }
     }

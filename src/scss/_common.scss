@@ -264,9 +264,115 @@
     .swiper-pagination-total {
         margin-left: 2px;
     }
-    @media (max-width:900px){
-         bottom: -30px;
-         right: 50%;
-         transform: translateX(50%);
+
+    @media (max-width:900px) {
+        bottom: -30px;
+        right: 50%;
+        transform: translateX(50%);
     }
+}
+
+
+
+.about-photo-nav {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(78, 127, 222, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    bottom: 17px;
+    transition: background-color $transitionSpeed $transitionFunction;
+
+    &::before {
+        font-size: 10px;
+        color: #33C1CC;
+        transition: color $transitionSpeed $transitionFunction;
+    }
+
+    &--prev {
+        display: none;
+        left: 17px;
+
+        &::before {
+            transform: rotate(180deg);
+        }
+    }
+
+    &--next {
+        right: 17px;
+    }
+
+    &:hover {
+        background-color: #33C1CC;
+
+        &::before {
+            color: $whiteColor;
+        }
+    }
+
+    @media (max-width:$smallTablet) {
+        width: 36px;
+        height: 36px;
+        bottom: 10px;
+
+        &::before {
+            font-size: 7.2px;
+        }
+    }
+}
+
+.about-photo-pagination {
+    display: none;
+
+    @media (max-width:$mobile) {
+        display: inline-block;
+    }
+
+    width: auto !important;
+    position: absolute;
+    height: 6px;
+    bottom: -10px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+
+    .swiper-pagination-bullet {
+        opacity: 1;
+        background-color: #E9EDF6;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+
+        &.swiper-pagination-bullet-active {
+            background-color: #39B6C0;
+        }
+    }
+}
+
+
+.play--triagle {
+    &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 11.25px 0 11.25px 19.5px;
+        border-color: transparent transparent transparent #39b7c0;
+        display: block;
+        z-index: 5;
+
+        @media (max-width:$smallTablet) {
+            border-width: 8.5px 0 8.5px 15px;
+        }
+    }
+}
+
+
+.asd {
+    overflow: hidden;
 }

@@ -42,10 +42,20 @@
 // ================================================================================
 
 
+
+
+// videoJs
+@import "../../node_modules/video.js/dist/video-js.min";
+
+
+// ================================================================================
+
+
+
 // Галерея
 
 // Базовые стили
-// @import './vendor/gallery/lightgallery';
+@import './vendor/gallery/lightgallery';
 
 // Стили дополнений
 // @import './vendor/gallery/lg-thumbnail';

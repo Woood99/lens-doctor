@@ -55,8 +55,9 @@ const modal = new GraphModal();
 
 
 // Реализация табов
-// import GraphTabs from 'graph-tabs';
-// const tabs = new GraphTabs('tab');
+import GraphTabs from 'graph-tabs';
+const tabs = new GraphTabs('about-tabs');
+tabs.switchTabs(tabs.tabs.querySelector('#about-tabs2'));
 
 
 // ========================================================================================
@@ -222,29 +223,7 @@ spollersFunc.spollers();
 // ========================================================================================
 
 
-// Подключение галереи
-
-// Документация: https://www.lightgalleryjs.com/docs/
-// Сниппет(HTML): gallery
-
-// Подключение базового набора функционала
-// import lightGallery from 'lightgallery';
-
-// Плагины
-// lgZoom, lgAutoplay, lgComment, lgFullscreen, lgHash, lgPager, lgRotate, 
-// lgShare, lgThumbnail, lgVideo, lgMediumZoom
-// import lgFullscreen from 'lightgallery/plugins/fullscreen/lg-fullscreen.min.js';
-
-// Запуск
-// const galleries = document.querySelectorAll('#galleryID');
-// galleries.forEach(gallery => {
-//     lightGallery(gallery, {
-//         // plugins: [lgFullscreen],
-//         licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
-//         speed: 500,
-//     });
-// });
-
+import "./functions/gallery";
 
 
 // ========================================================================================
@@ -310,3 +289,10 @@ function receptionFormSelect() {
     });
 }
 receptionFormSelect();
+
+
+
+
+// ========================================================================================
+
+

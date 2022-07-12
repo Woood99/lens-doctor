@@ -6,9 +6,14 @@ import Swiper, {
     Navigation,
     Pagination,
     EffectFade,
+    EffectCards,
     Thumbs,
+    Autoplay,
 } from 'swiper';
-Swiper.use([Navigation, Pagination, EffectFade, Thumbs]);
+import {
+    isMobile
+} from './check-viewport';
+Swiper.use([Navigation, Pagination, EffectFade, EffectCards, Thumbs, Autoplay]);
 
 
 
@@ -163,7 +168,7 @@ function initSliders() {
                 nextEl: ourDoctorsInner.querySelector('.our-doctors__navigation--next'),
             },
             pagination: {
-                el:  ourDoctorsInner.querySelector('.our-doctors__pagination'),
+                el: ourDoctorsInner.querySelector('.our-doctors__pagination'),
                 type: 'fraction',
             },
             thumbs: {
@@ -178,7 +183,61 @@ function initSliders() {
     }
 
 
+    if (document.querySelector('.about-photo__slider')) {
+        const aboutPhotoSlider = document.querySelectorAll('.about-photo__slider').forEach(el => {
+            new Swiper(el, {
+                // autoplay: {
+                // 	delay: 3000,
+                // 	disableOnInteraction: false,
+                // },
+                effect: "cards",
+                grabCursor: true,
+                observer: true,
+                observeParents: true,
+                observeSlideChildren: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                // touchRatio: 0,
+                // simulateTouch: false,
+                // loop: true,
+                // preloadImages: false,
+                // lazy: true,
 
+
+                pagination: {
+                    el: el.closest('.about-photo__inner').querySelector('.about-photo-pagination'),
+                	clickable: true,
+                },
+
+                navigation: {
+                    nextEl: el.closest('.about-photo__inner').querySelector('.about-photo-nav--next'),
+                    prevEl: el.closest('.about-photo__inner').querySelector('.about-photo-nav--prev'),
+                },
+
+
+                on: {
+                    slideChange: function (el) {
+                        const navPrev = el.navigation.prevEl;
+                        const navNext = el.navigation.nextEl;
+                        const currentIndex = el.realIndex;
+                        const amountSlide = el.wrapperEl.querySelectorAll('.about-photo__slide').length;
+                        if (currentIndex == 0) {
+                            navPrev.style.display = 'none';
+                            navNext.style.display = 'flex';
+                        }
+                        if (currentIndex > 0 && currentIndex < amountSlide - 1) {
+                            navPrev.style.display = 'flex';
+                            navNext.style.display = 'flex';
+                        }
+                        if (currentIndex == amountSlide - 1) {
+                            navPrev.style.display = 'flex';
+                            navNext.style.display = 'none';
+                        }
+                    },
+                }
+            });
+        });
+    }
 
 
 

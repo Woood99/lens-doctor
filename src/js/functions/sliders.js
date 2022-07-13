@@ -240,6 +240,55 @@ function initSliders() {
     }
 
 
+    if (document.querySelector('.our-rating__wrapper')) {
+        const heroSliders = document.querySelectorAll('.our-rating__wrapper').forEach(el => {
+            new Swiper(el, {
+                // autoplay: {
+                // 	delay: 3000,
+                // 	disableOnInteraction: false,
+                // },
+
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1.51,
+                spaceBetween: 30,
+                speed: 800,
+                // touchRatio: 0,
+                // simulateTouch: false,
+                // loop: true,
+                // preloadImages: false,
+                // lazy: true,
+
+
+                pagination: {
+                    el: el.closest('.our-rating__inner').querySelector('.our-rating__pagination'),
+                    clickable: true,
+                },
+
+             
+                breakpoints: {
+                    400: {
+                        slidesPerView: 1.6,
+                    },
+                    576: {
+                        slidesPerView: 2.4,
+                    },
+                    768: {
+                        slidesPerView: 3.4,
+                    },
+                    1025: {
+                        slidesPerView: 4,
+                        spaceBetween: 83,
+                    },
+                },
+               
+
+                on: {
+
+                }
+            });
+        });
+    }
 
 
 }

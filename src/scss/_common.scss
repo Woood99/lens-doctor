@@ -376,3 +376,27 @@
 .asd {
     overflow: hidden;
 }
+
+
+
+.our-rating__pagination {
+    display: inline-block;
+    width: auto !important;
+    position: absolute;
+    height: 6px;
+    bottom: -18px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+
+    .swiper-pagination-bullet {
+        opacity: 1;
+        background-color: #E9EDF6;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+
+        &.swiper-pagination-bullet-active {
+            background-color: #39B6C0;
+        }
+    }
+}

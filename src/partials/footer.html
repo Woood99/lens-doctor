@@ -4,7 +4,11 @@
             <ul class="footer-body__list list-reset">
                 <li class="footer-body__item footer-body__item--logo footer-logo">
                     <a href="#" class="footer-logo__logo logo">
-                        <img src="img/logo--white.png" class="logo__img" alt="Доктор Линз">
+                        <picture>
+                            <source srcset="img/logo--white.avif" type="image/avif">
+                            <source srcset="img/logo--white.webp" type="image/webp">
+                            <img loading="lazy" src="img/logo--white.png" class="logo__img" alt="Доктор Линз">
+                        </picture>
                     </a>
                     <p class="footer-logo__license">
                         Лицензия N 0000 0000

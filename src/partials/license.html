@@ -38,7 +38,11 @@
         </div>
         <div class="license__gallery license-gallery">
             <a href="img/licence.jpg" class="license-gallery__link">
-                <img src="img/licence.jpg" class="license-gallery__img" alt="Лицензия">
+                <picture>
+                  <source srcset="img/licence.avif" type="image/avif">
+                  <source srcset="img/licence.webp" type="image/webp">
+                  <img loading="lazy" src="img/licence.jpg"  class="license-gallery__img" alt="Лицензия">
+                </picture>
             </a>
         </div>
     </div>

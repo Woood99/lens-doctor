@@ -70,17 +70,22 @@
                         <button class="btn btn-reset search-form__btn icon-search ">Искать</button>
                     </form>
                 </div>
-                <button type="submit"
-                    class="btn btn-reset btn--primary header-top__cart icon-cart" data-da=".nav-mobile-container__top,768,first">Интернет-магазин</button>
+                <button type="submit" class="btn btn-reset btn--primary header-top__cart icon-cart"
+                    data-da=".nav-mobile-container__top,768,first">Интернет-магазин</button>
             </div>
         </div>
     </div>
     <div class="header__body header-body">
         <div class="header-body__inner container">
             <a href="#" class="header-body__logo logo">
-                <img src="img/logo.png" class="logo__img" alt="Доктор Линз">
+                <picture>
+                    <source srcset="img/logo.avif" type="image/avif">
+                    <source srcset="img/logo.webp" type="image/webp">
+                    <img loading="lazy" src="img/logo.png" class="logo__img" alt="Доктор Линз">
+                </picture>
             </a>
-            <button type="submit" class="btn btn-reset btn--secondary header-body__btn" data-da=".nav-mobile-container__top,768,last">Записаться онлайн</button>
+            <button type="submit" class="btn btn-reset btn--secondary header-body__btn"
+                data-da=".nav-mobile-container__top,768,last">Записаться онлайн</button>
             <div class="header-body__schedule" data-da=".nav-mobile-container__bottom,1050,first">
                 Ежедневно 09:00 – 21:00
             </div>
@@ -89,7 +94,7 @@
                     (383) 209-17-18
                 </a>
                 <button class="back-call__btn btn btn-reset" data-graph-path="back-call">Обратный звонок</button>
-                <ul class="back-call__social social list-reset"  data-da=".nav-mobile-container__bottom,1050,last">
+                <ul class="back-call__social social list-reset" data-da=".nav-mobile-container__bottom,1050,last">
                     <li class="social__item">
                         <a href="#" target="_blank" class="social__link social__link--wsapp icon-whatsapp"
                             aria-label="Мы в WhatsApp">
@@ -110,8 +115,8 @@
                 <ul class="nav__list list-reset">
                     <li class="nav__item" data-menu-item><a href="#" class="nav__link">О клинике</a></li>
                     <li class="nav__item nav__dropdown nav-dropdown" data-dropdown>
-                        <button
-                            class="btn btn-reset nav-dropdown__btn nav-dropdown__btn--arrow icon-triagle-arrow-down" data-dropdown-button>Услуги</button>
+                        <button class="btn btn-reset nav-dropdown__btn nav-dropdown__btn--arrow icon-triagle-arrow-down"
+                            data-dropdown-button>Услуги</button>
                         <div class="nav-dropdown__box" data-dropdown-box>
                             <button class="btn btn-reset nav-dropdown__back icon-triagle-arrow-down" data-dropdown-back>
                                 Услуги
@@ -209,8 +214,8 @@
                     </li>
                     <li class="nav__item" data-menu-item><a href="#" class="nav__link">Ночные линзы</a></li>
                     <li class="nav__item nav__dropdown nav-dropdown" data-dropdown>
-                        <button
-                            class="btn btn-reset nav-dropdown__btn nav-dropdown__btn--arrow icon-triagle-arrow-down" data-dropdown-button>Врачи</button>
+                        <button class="btn btn-reset nav-dropdown__btn nav-dropdown__btn--arrow icon-triagle-arrow-down"
+                            data-dropdown-button>Врачи</button>
                         <div class="nav-dropdown__box" data-dropdown-box>
                             <button class="btn btn-reset nav-dropdown__back icon-triagle-arrow-down" data-dropdown-back>
                                 Врачи

@@ -23,11 +23,13 @@
                         Записаться на приём
                     </h3>
                     <label class="form-primary__label reception-form__label">
-                        <input type="text" name="Имя" class="input-reset reception-form__input reception-form__input--name form-primary__input"
+                        <input type="text" name="Имя"
+                            class="input-reset reception-form__input reception-form__input--name form-primary__input"
                             placeholder="Имя">
                     </label>
                     <label class="form-primary__label reception-form__label">
-                        <input type="tel" name="Телефон" class="input-reset reception-form__input reception-form__input--tel form-primary__input"
+                        <input type="tel" name="Телефон"
+                            class="input-reset reception-form__input reception-form__input--tel form-primary__input"
                             placeholder="Телефон">
                     </label>
                     <select class="form-primary__select reception-form__select">
@@ -48,7 +50,7 @@
                     <label
                         class="form-primary__label form-primary__label--calendar icon-calendar reception-form__label reception-form__label--calendar">
                         <input type="text"
-                            class="input-reset form-primary__input form-primary__input--calendar reception-form__input--calendar reception-form__input" >
+                            class="input-reset form-primary__input form-primary__input--calendar reception-form__input--calendar reception-form__input">
                     </label>
                     <button
                         class="btn btn-reset btn--secondary form-primary__btn reception-form__btn">Записаться</button>
@@ -58,6 +60,10 @@
                 </form>
             </div>
         </div>
-        <img class="reception__img" src="img/reception-img-1.png" alt="img">
+        <picture>
+            <source srcset="img/reception-img-1.avif" type="image/avif">
+            <source srcset="img/reception-img-1.webp" type="image/webp">
+            <img loading="lazy" src="img/reception-img-1.png" class="reception__img" alt="Мама с ребёнком">
+        </picture>
     </div>
 </section>

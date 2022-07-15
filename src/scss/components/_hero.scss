@@ -39,7 +39,6 @@
     &__slide {
         background-position: bottom 0 right -75px;
         background-repeat: no-repeat;
-
         @media (min-width:$smallTablet) {
             &--1 {
                 background-position: bottom -30px right -50px;

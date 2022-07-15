@@ -206,7 +206,7 @@ function initSliders() {
 
                 pagination: {
                     el: el.closest('.about-photo__inner').querySelector('.about-photo-pagination'),
-                	clickable: true,
+                    clickable: true,
                 },
 
                 navigation: {
@@ -265,7 +265,7 @@ function initSliders() {
                     clickable: true,
                 },
 
-             
+
                 breakpoints: {
                     400: {
                         slidesPerView: 1.6,
@@ -281,7 +281,7 @@ function initSliders() {
                         spaceBetween: 83,
                     },
                 },
-               
+
 
                 on: {
 
@@ -289,7 +289,65 @@ function initSliders() {
             });
         });
     }
+    if (document.querySelector('.reviews-slider')) {
+        const reviewsSliders = document.querySelectorAll('.reviews-slider').forEach(el => {
+            new Swiper(el, {
+                // autoplay: {
+                // 	delay: 3000,
+                // 	disableOnInteraction: false,
+                // },
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 30,
+                speed: 800,
+                // touchRatio: 0,
+                // simulateTouch: false,
+                // loop: true,
+                // preloadImages: false,
+                // lazy: true,
 
+
+                pagination: {
+                    el: el.closest('.reviews-tab').querySelector('.reviews__pagination'),
+                    clickable: true,
+                },
+
+                navigation: {
+                    nextEl: el.closest('.reviews-tab').querySelector('.reviews__nav--next'),
+                    prevEl: el.closest('.reviews-tab').querySelector('.reviews__nav--prev'),
+                },
+
+
+                breakpoints: {
+                    1025: {
+                        slidesPerView: 2,
+                        spaceBetween: 43,
+                    },
+                },
+
+
+                on: {
+                    breakpoint: function (slider) {
+                        if (slider.currentBreakpoint == '1025') {
+                            if (el.classList.contains('reviews-slider--text')) {
+                                el.querySelectorAll('.reviews-text-slide__text').forEach(block => {
+                                    let scrollBar = block.querySelector('.simplebar-vertical');
+                                    block.addEventListener('mousemove', (e) => {
+                                        if (block.classList.contains('simplebar-dragging') || scrollBar.classList.contains('simplebar-hover')) {
+                                            slider.allowTouchMove = false;
+                                        } else {
+                                            slider.allowTouchMove = true;
+                                        }
+                                    });
+                                });
+                            };
+                        }
+                    }
+                }
+            });
+        });
+    }
 
 }
 

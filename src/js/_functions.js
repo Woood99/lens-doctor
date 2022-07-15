@@ -56,8 +56,11 @@ const modal = new GraphModal();
 
 // Реализация табов
 import GraphTabs from 'graph-tabs';
-const tabs = new GraphTabs('about-tabs');
-tabs.switchTabs(tabs.tabs.querySelector('#about-tabs2'));
+const aboutTabs = new GraphTabs('about-tabs');
+aboutTabs.switchTabs(aboutTabs.tabs.querySelector('#about-tabs2'));
+
+const reviewsTabs = new GraphTabs('reviews-tabs');
+reviewsTabs.switchTabs(reviewsTabs.tabs.querySelector('#reviews-tabs2'));
 
 
 // ========================================================================================
@@ -74,7 +77,45 @@ window.addEventListener('resize', getHeaderHeight);
 
 
 
-// import SimpleBar from 'simplebar';
+import SimpleBar from 'simplebar';
+document.querySelectorAll('.block-scroll').forEach(el => {
+    const simpleBar = new SimpleBar(el);
+    const vertical = simpleBar.el.querySelector('.simplebar-vertical');
+
+    let interval;
+
+    function forceUpdateTimer(mask) {
+        clearInterval(interval);
+        let timerSeconds = 0;
+        interval = setInterval(() => {
+            if (timerSeconds >= 0) {
+                timerSeconds++;
+            }
+            if (timerSeconds == 10) {
+                clearInterval(interval);
+                mask.classList.add('mask');
+            }
+        }, 1000);
+    }
+
+
+    setTimeout(() => {
+        if (getComputedStyle(vertical).visibility == 'visible') {
+            simpleBar.maskEl.classList.add('mask');
+        }
+        simpleBar.getScrollElement().addEventListener('scroll', (e) => {
+            const mask = e.target.closest('.simplebar-mask');
+            if (mask.classList.contains('mask')) {
+                mask.classList.remove('mask');
+            }
+            if (!mask.classList.contains('mask')) {
+                forceUpdateTimer(mask);
+            };
+        });
+    }, 1000);
+});
+
+
 
 // ========================================================================================
 
@@ -294,5 +335,3 @@ receptionFormSelect();
 
 
 // ========================================================================================
-
-

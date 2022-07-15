@@ -1,0 +1,314 @@
+.reviews {
+    @include adaptiveValue("margin-top", 120, 70);
+    padding-bottom: 35px;
+
+    &__title {}
+
+    &__inner {
+        margin-top: 50px;
+
+        @media (max-width:$smallTablet) {
+            margin-top: 20px;
+        }
+    }
+
+    &__tabs {}
+
+    &-slider {
+        margin: -10px -15px -25px;
+        padding: 10px 15px 25px;
+
+        .swiper-wrapper {
+            &.no-transform {
+                transform: none !important;
+            }
+        }
+    }
+}
+
+.reviews-tabs {
+    &__content {
+        margin-top: 40px;
+
+        @media (max-width:$smallTablet) {
+            margin-top: 20px;
+        }
+    }
+
+    &--video {}
+
+    &--text {}
+}
+
+.reviews-text {
+
+    &__slide {
+        padding: 35px;
+        box-sizing: border-box;
+        background-color: #fff;
+        box-shadow: 0px 10px 26px rgba(165, 175, 197, 0.24);
+        border-radius: 20px;
+
+        @media (max-width:$smallTablet) {
+            border-radius: 6px;
+            padding: 25px 15px;
+        }
+    }
+}
+
+.reviews-text-slide {
+
+    &__top {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width:$mobile) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, max-content);
+        }
+    }
+
+    &__left {
+        padding-right: 20px;
+        display: flex;
+        align-items: center;
+
+        img {
+            display: block;
+            border-radius: 50%;
+        }
+    }
+
+    &__info {
+        margin-left: 18px;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width:$smallTablet) {
+            margin-left: 13px;
+        }
+    }
+
+    &__name {
+        font-weight: 500;
+        @include adaptiveValue("font-size", 20, 16);
+        line-height: math.div(20, 20);
+        color: #1B1D32;
+    }
+
+    &__age-pos {
+        @include adaptiveValue("font-size", 15, 12);
+        line-height: math.div(20, 15);
+        color: #757AA4;
+    }
+
+    &__descr {
+        margin-top: 4px;
+        @include adaptiveValue("font-size", 14, 12);
+        line-height: math.div(14, 14);
+        color: #1B1D32;
+
+        @media (max-width:$smallTablet) {
+            margin-top: 10px;
+        }
+    }
+
+    &__date {
+        @include adaptiveValue("font-size", 14, 12);
+        line-height: math.div(26, 14);
+        color: #33C1CC;
+
+        @media (max-width:$mobile) {
+            margin-left: calc(77px + 13px);
+            margin-top: -10px;
+        }
+    }
+
+    &__text {
+        margin-top: 28px;
+        max-height: 255px;
+
+        @include adaptiveValue("font-size", 15, 12);
+        line-height: math.div(26, 15);
+        color: #6D768C;
+
+        @media (max-width:$smallTablet) {
+            max-height: 235px;
+        }
+    }
+
+    &__more {
+        margin-top: 13px;
+        transition: color $transitionSpeed $transitionFunction;
+        display: flex;
+        align-items: center;
+        position: relative;
+        color: #33C1CC;
+        padding: 7px 34px 7px 0;
+
+        &::before {
+            position: absolute;
+            right: 7px;
+            font-size: 10px;
+        }
+
+        @media (max-width:$mobile) {
+            font-size: 12px;
+            padding: 7px 29px 7px 0;
+
+            &::before {
+                font-size: 8px;
+            }
+        }
+
+        &:hover {
+            color: #028ECE;
+        }
+    }
+}
+
+.reviews-tab {
+    position: relative;
+}
+
+
+
+.reviews-video {
+
+    &__slide {
+        padding: 35px;
+        box-sizing: border-box;
+        background-color: #fff;
+        box-shadow: 0px 10px 26px rgba(165, 175, 197, 0.24);
+        border-radius: 20px;
+
+        @media (max-width:$smallTablet) {
+            border-radius: 6px;
+            padding: 25px 15px;
+        }
+    }
+}
+
+.reviews-video-slide {
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width:$mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__name {
+        font-weight: 500;
+        @include adaptiveValue("font-size", 20, 16);
+        line-height: math.div(20, 20);
+        color: #1B1D32;
+    }
+
+    &__age-pos {
+        @include adaptiveValue("font-size", 15, 12);
+        line-height: math.div(20, 15);
+        color: #757AA4;
+    }
+
+    &__descr {
+        margin-top: 4px;
+        @include adaptiveValue("font-size", 14, 12);
+        line-height: math.div(14, 14);
+        color: #1B1D32;
+
+        @media (max-width:$smallTablet) {
+            margin-top: 10px;
+        }
+    }
+
+    &__date {
+        @include adaptiveValue("font-size", 14, 12);
+        line-height: math.div(26, 14);
+        color: #33C1CC;
+
+        @media (max-width:$mobile) {
+            margin-top: 5px;
+        }
+    }
+
+    &__video {
+        margin-top: 20px;
+        width: 400px;
+
+        @media (max-width:$tablet) {
+            width: 60%;
+        }
+
+        @media (max-width:$smallTablet) {
+            width: 100%;
+        }
+
+        &.video-modal {
+
+            .video-modal__poster {}
+
+            .video-modal__img {}
+
+            .video-modal__play {
+                width: 76px;
+                height: 76px;
+
+                &::before {
+                    border-width: 6.5px 0 6.5px 11px;
+                    border-radius: 2px;
+                }
+
+                &::after {
+                    width: 56px;
+                    height: 56px;
+                }
+            }
+
+            .video-modal__start {}
+
+            .video-modal__back {}
+
+            .video-modal__video {}
+        }
+    }
+
+    &__more {
+        margin-top: 35px;
+        transition: color $transitionSpeed $transitionFunction;
+        display: flex;
+        align-items: center;
+        position: relative;
+        color: #33C1CC;
+        padding: 7px 34px 7px 0;
+
+        &::before {
+            position: absolute;
+            right: 7px;
+            font-size: 10px;
+        }
+
+        @media (max-width:$mobile) {
+            margin-top: 20px;
+            font-size: 12px;
+            padding: 7px 29px 7px 0;
+
+            &::before {
+                font-size: 8px;
+            }
+        }
+
+        &:hover {
+            color: #028ECE;
+        }
+    }
+}

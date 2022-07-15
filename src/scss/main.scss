@@ -9,7 +9,8 @@
 @import "common";
 @import "./components/popup";
 @import "./components/form";
-
+@import "./components/simplebar";
+@import "./components/video-modal";
 
 
 // big components
@@ -22,6 +23,7 @@
 @import "./components/about";
 @import "./components/license";
 @import "./components/our-rating";
+@import "./components/reviews";
 @import "./components/footer";
 
 
@@ -33,4 +35,4 @@
 @import "./components/back-call";
 @import "./components/nav";
 @import "./components/select";
-@import "./components/video-modal";
+@import "./components/progress-circle";

@@ -1,34 +1,63 @@
-import { disableScroll } from '../functions/disable-scroll';
-import { enableScroll } from '../functions/enable-scroll';
+ import {
+     disableScroll
+ } from '../functions/disable-scroll';
+ import {
+     enableScroll
+ } from '../functions/enable-scroll';
 
-// videoJs
-import videojs from 'video.js';
+ // videoJs
+ import videojs from 'video.js';
 
 
-function videoModal() {
-    const videoModalList = document.querySelectorAll('.video-modal');
-    videoModalList.forEach(el => {
-        const btn = el.querySelector('.video-modal__poster');
-        const start = el.querySelector('.video-modal__start');
-        const video = el.querySelector('.video-modal__video');
-        const back = el.querySelector('.video-modal__back');
-        videojs(video, {
+ function videoModal() {
+     const modal = document.querySelector('.video-modals');
+     const close = modal.querySelector('.video-modals__close');
+     const videoModalsList = document.querySelectorAll('[data-video-modal]');
+     for (let i = 0; i < videoModalsList.length; i++) {
+         videoModalsList[i].setAttribute('data-video-modal-index', i);
+     }
+     document.querySelectorAll('[data-video-modal]').forEach(el => {
+         const video = el.querySelector('.video-modal__video');
+         const modalContainer = document.createElement('div');
+         modalContainer.classList.add('video-modals__container', 'fade');
+         modalContainer.setAttribute('data-video-modal-index', el.getAttribute('data-video-modal-index'));
+         modal.append(modalContainer);
+         modalContainer.append(video);
+         videojs(video);
 
-        });
-        btn.addEventListener('click', () => {
-            if (!start.classList.contains('open')) {
-                start.classList.add('open');
-                document.querySelector('body').style.overflow = 'hidden';
-            }
-        });
-        back.addEventListener('click', () => {
-            if (start.classList.contains('open')) {
-                start.classList.remove('open');
-                document.querySelector('body').style.overflow = 'visible';
-                video.pause();
-            }
-        });
-    })
-}
-videoModal()
+         function modalOpen() {
+             console.log('open');
+             modal.querySelectorAll('.video-modals__container').forEach(container => {
+                 if (el.dataset.videoModalIndex == container.dataset.videoModalIndex) {
+                     modal.classList.add('open');
+                     container.classList.add('open');
+                     setTimeout(() => {
+                         container.classList.add('fade-animate');
+                     }, 100);
+                 }
+             });
+             document.body.style.scrollBehavior = 'auto';
+             document.documentElement.style.scrollBehavior = 'auto';
+             disableScroll();
+         }
 
+         function modalClose() {
+             modal.querySelectorAll('.video-modals__container').forEach(el => {
+                 if (el.classList.contains('open')) {
+                     console.log('close')
+                     modal.classList.remove('open');
+                     el.classList.remove('open', 'fade-animate');
+                     enableScroll();
+                     document.body.style.scrollBehavior = 'auto';
+                     document.documentElement.style.scrollBehavior = 'auto';
+                 }
+             });
+         }
+         el.addEventListener('click', modalOpen);
+         close.addEventListener('click', () => {
+             video.pause();
+             modalClose();
+         });;
+     })
+ }
+ videoModal()

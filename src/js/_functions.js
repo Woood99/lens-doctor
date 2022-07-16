@@ -213,7 +213,8 @@ if (document.querySelector('.reception-form__inner')) {
         console.log('Произошла отправка, тут можно писать любые действия');
     };
 
-    validateForms('.reception-form__inner', receptionFormRules, afterForm);
+    validateForms('.reception-form__inner--1', receptionFormRules, afterForm);
+    validateForms('.reception-form__inner--2', receptionFormRules, afterForm);
 }
 
 if (document.querySelector('.back-call-form')) {
@@ -320,13 +321,14 @@ import Choices from 'choices.js';
 
 
 function receptionFormSelect() {
-    let receptionSelect = document.querySelector('.reception-form__select');
-    new Choices(receptionSelect, {
-        searchEnabled: false,
-        maxItemCount: 3,
-        itemSelectText: 'Выбрать',
-        shouldSort: false,
-        position: 'bottom',
+    document.querySelectorAll('.reception-form__select').forEach(el => {
+        new Choices(el, {
+            searchEnabled: false,
+            maxItemCount: 3,
+            itemSelectText: 'Выбрать',
+            shouldSort: false,
+            position: 'bottom',
+        });
     });
 }
 receptionFormSelect();

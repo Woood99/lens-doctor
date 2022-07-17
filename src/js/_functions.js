@@ -62,6 +62,8 @@ aboutTabs.switchTabs(aboutTabs.tabs.querySelector('#about-tabs2'));
 const reviewsTabs = new GraphTabs('reviews-tabs');
 reviewsTabs.switchTabs(reviewsTabs.tabs.querySelector('#reviews-tabs2'));
 
+const weMapTabs = new GraphTabs('we-map-tabs');
+
 
 // ========================================================================================
 

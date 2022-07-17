@@ -4,3 +4,4 @@ import './components/nav-dropdown';
 import './components/fix-burger';
 import './components/video-modal';
 import './components/progress-circle';
+import './components/we-map';

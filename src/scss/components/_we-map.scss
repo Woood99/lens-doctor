@@ -1,0 +1,16 @@
+.we-map {
+
+    &__inner {
+        position: relative;
+    }
+
+    [class*="copyrights-pane"] {
+        display: none !important;
+    }
+}
+
+
+.we-map-city {
+    width: 100%;
+    height: 600px;
+}

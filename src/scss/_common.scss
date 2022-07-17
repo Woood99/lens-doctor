@@ -431,6 +431,32 @@
 
 
 
+.benefits__pagination {
+    width: auto !important;
+    position: absolute;
+    height: 6px;
+    bottom: 0px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-100%);
+    display: none;
+
+    .swiper-pagination-bullet {
+        opacity: 1;
+        background-color: #E9EDF6;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+
+        &.swiper-pagination-bullet-active {
+            background-color: #39B6C0;
+        }
+    }
+
+    @media (max-width:1199px) {
+        display: inline-block;
+    }
+}
+
 
 .reviews__nav {
     position: absolute;
@@ -479,6 +505,7 @@
     @media (max-width:1450px) {
         top: 0;
         transform: translateY(-100%);
+
         &--prev {
             left: 0px;
         }
@@ -488,7 +515,7 @@
         }
     }
 
-    @media (max-width:$tablet){
+    @media (max-width:$tablet) {
         display: none;
     }
 }

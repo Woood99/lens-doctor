@@ -349,6 +349,75 @@ function initSliders() {
         });
     }
 
+    if (document.querySelector('.benefits__list')) {
+        let benefitsSlider;
+        let breakpoint = (1200 - 1);
+        const benefitsList = document.querySelector('.benefits__list');
+
+        function benefitsSliderFunc() {
+            if (window.innerWidth <= breakpoint && benefitsList.dataset.mobile == 'false') {
+                benefitsSlider = new Swiper(benefitsList, {
+                    // autoplay: {
+                    // 	delay: 3000,
+                    // 	disableOnInteraction: false,
+                    // },
+                    observer: true,
+                    observeParents: true,
+                    slidesPerView: 1.15,
+                    spaceBetween: 10,
+                    speed: 800,
+                    // touchRatio: 0,
+                    // simulateTouch: false,
+                    // loop: true,
+                    // preloadImages: false,
+                    // lazy: true,
+        
+        
+                    pagination: {
+                        el: benefitsList.querySelector('.benefits__pagination'),
+                        clickable: true,
+                    },
+        
+                    // navigation: {
+                    //     nextEl: el.closest('.reviews-tab').querySelector('.reviews__nav--next'),
+                    //     prevEl: el.closest('.reviews-tab').querySelector('.reviews__nav--prev'),
+                    // },
+        
+        
+                    breakpoints: {
+                        500: {
+                            slidesPerView: 1.4,
+                            spaceBetween: 10,
+                        },
+                        576: {
+                            slidesPerView: 1.6,
+                            spaceBetween: 10,
+                        },
+                        650: {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                    },
+                });
+                benefitsList.dataset.mobile = 'true';
+            }
+            if (window.innerWidth > breakpoint) {
+                benefitsList.dataset.mobile = 'false';
+
+                if (benefitsList.classList.contains('swiper-initialized')) {
+                    benefitsSlider.destroy();
+                }
+            }
+        }
+        benefitsSliderFunc();
+        window.addEventListener('resize', benefitsSliderFunc);
+
+    }
+
 }
 
 

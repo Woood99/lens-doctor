@@ -59,6 +59,7 @@
             visibility $transitionSpeed $transitionFunction,
             transform $transitionSpeed $transitionFunction;
         z-index: 999;
+
         &.menu--active {
             opacity: 1;
             visibility: visible;
@@ -77,13 +78,13 @@
         }
     }
 
-    @media (min-width: $burgerMenuPx) {
+    @media (min-width: 1051px) {
         .nav__mobile-container {
             display: none;
         }
     }
 
-    @media (min-width:$smallTablet) {
+    @media (min-width:769px) {
         .nav-mobile-container__top {
             display: none;
         }

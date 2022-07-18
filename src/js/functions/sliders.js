@@ -1,7 +1,5 @@
 // =========================================================================================
 
-
-
 import Swiper, {
     Navigation,
     Pagination,
@@ -10,9 +8,6 @@ import Swiper, {
     Thumbs,
     Autoplay,
 } from 'swiper';
-import {
-    isMobile
-} from './check-viewport';
 Swiper.use([Navigation, Pagination, EffectFade, EffectCards, Thumbs, Autoplay]);
 
 
@@ -23,35 +18,18 @@ Swiper.use([Navigation, Pagination, EffectFade, EffectCards, Thumbs, Autoplay]);
 
 
 function initSliders() {
-
-
-
-
     if (document.querySelector('.hero__slider')) {
         const heroSliders = document.querySelectorAll('.hero__slider').forEach(el => {
             new Swiper(el, {
-
                 effect: 'fade',
                 fadeEffect: {
                     crossFade: true
                 },
-                // autoplay: {
-                // 	delay: 3000,
-                // 	disableOnInteraction: false,
-                // },
-
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
                 spaceBetween: 30,
                 speed: 800,
-                // touchRatio: 0,
-                // simulateTouch: false,
-                // loop: true,
-                // preloadImages: false,
-                // lazy: true,
-
-
                 pagination: {
                     el: el.closest('.hero').querySelector('.hero__pagination'),
                     clickable: true,
@@ -61,66 +39,17 @@ function initSliders() {
                     nextEl: el.closest('.hero').querySelector('.hero-nav-next'),
                     prevEl: el.closest('.hero').querySelector('.hero-nav-prev'),
                 },
-
-                /*
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 0,
-                        autoHeight: true,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                    },
-                    992: {
-                        slidesPerView: 3,
-                        spaceBetween: 20,
-                    },
-                    1268: {
-                        slidesPerView: 4,
-                        spaceBetween: 30,
-                    },
-                },
-                */
-
-                on: {
-
-                }
             });
         });
     }
     if (document.querySelector('.service-bottom__slider')) {
         const heroSliders = document.querySelectorAll('.service-bottom__slider').forEach(el => {
             new Swiper(el, {
-                // autoplay: {
-                // 	delay: 3000,
-                // 	disableOnInteraction: false,
-                // },
-
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1.15,
                 spaceBetween: 10,
                 speed: 800,
-                // touchRatio: 0,
-                // simulateTouch: false,
-                // loop: true,
-                // preloadImages: false,
-                // lazy: true,
-
-
-                // pagination: {
-                //     el: el.closest('.hero').querySelector('.hero__pagination'),
-                // 	clickable: true,
-                // },
-
-                // navigation: {
-                //     nextEl: el.closest('.hero').querySelector('.hero-nav-next'),
-                //     prevEl: el.closest('.hero').querySelector('.hero-nav-prev'),
-                // },
-
-
                 breakpoints: {
                     576: {
                         slidesPerView: 2,
@@ -131,11 +60,6 @@ function initSliders() {
                         spaceBetween: 30,
                     }
                 },
-
-
-                on: {
-
-                }
             });
         });
     }
@@ -182,14 +106,9 @@ function initSliders() {
         });
     }
 
-
     if (document.querySelector('.about-photo__slider')) {
         const aboutPhotoSlider = document.querySelectorAll('.about-photo__slider').forEach(el => {
             new Swiper(el, {
-                // autoplay: {
-                // 	delay: 3000,
-                // 	disableOnInteraction: false,
-                // },
                 effect: "cards",
                 grabCursor: true,
                 observer: true,
@@ -197,13 +116,6 @@ function initSliders() {
                 observeSlideChildren: true,
                 slidesPerView: 1,
                 spaceBetween: 0,
-                // touchRatio: 0,
-                // simulateTouch: false,
-                // loop: true,
-                // preloadImages: false,
-                // lazy: true,
-
-
                 pagination: {
                     el: el.closest('.about-photo__inner').querySelector('.about-photo-pagination'),
                     clickable: true,
@@ -213,8 +125,6 @@ function initSliders() {
                     nextEl: el.closest('.about-photo__inner').querySelector('.about-photo-nav--next'),
                     prevEl: el.closest('.about-photo__inner').querySelector('.about-photo-nav--prev'),
                 },
-
-
                 on: {
                     slideChange: function (el) {
                         const navPrev = el.navigation.prevEl;
@@ -239,33 +149,18 @@ function initSliders() {
         });
     }
 
-
     if (document.querySelector('.our-rating__wrapper')) {
         const heroSliders = document.querySelectorAll('.our-rating__wrapper').forEach(el => {
             new Swiper(el, {
-                // autoplay: {
-                // 	delay: 3000,
-                // 	disableOnInteraction: false,
-                // },
-
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1.51,
                 spaceBetween: 30,
                 speed: 800,
-                // touchRatio: 0,
-                // simulateTouch: false,
-                // loop: true,
-                // preloadImages: false,
-                // lazy: true,
-
-
                 pagination: {
                     el: el.closest('.our-rating__inner').querySelector('.our-rating__pagination'),
                     clickable: true,
                 },
-
-
                 breakpoints: {
                     400: {
                         slidesPerView: 1.6,
@@ -281,52 +176,31 @@ function initSliders() {
                         spaceBetween: 83,
                     },
                 },
-
-
-                on: {
-
-                }
             });
         });
     }
     if (document.querySelector('.reviews-slider')) {
         const reviewsSliders = document.querySelectorAll('.reviews-slider').forEach(el => {
             new Swiper(el, {
-                // autoplay: {
-                // 	delay: 3000,
-                // 	disableOnInteraction: false,
-                // },
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
                 spaceBetween: 30,
                 speed: 800,
-                // touchRatio: 0,
-                // simulateTouch: false,
-                // loop: true,
-                // preloadImages: false,
-                // lazy: true,
-
-
                 pagination: {
                     el: el.closest('.reviews-tab').querySelector('.reviews__pagination'),
                     clickable: true,
                 },
-
                 navigation: {
                     nextEl: el.closest('.reviews-tab').querySelector('.reviews__nav--next'),
                     prevEl: el.closest('.reviews-tab').querySelector('.reviews__nav--prev'),
                 },
-
-
                 breakpoints: {
                     1025: {
                         slidesPerView: 2,
                         spaceBetween: 43,
                     },
                 },
-
-
                 on: {
                     breakpoint: function (slider) {
                         if (slider.currentBreakpoint == '1025') {
@@ -357,33 +231,15 @@ function initSliders() {
         function benefitsSliderFunc() {
             if (window.innerWidth <= breakpoint && benefitsList.dataset.mobile == 'false') {
                 benefitsSlider = new Swiper(benefitsList, {
-                    // autoplay: {
-                    // 	delay: 3000,
-                    // 	disableOnInteraction: false,
-                    // },
                     observer: true,
                     observeParents: true,
                     slidesPerView: 1.15,
                     spaceBetween: 10,
                     speed: 800,
-                    // touchRatio: 0,
-                    // simulateTouch: false,
-                    // loop: true,
-                    // preloadImages: false,
-                    // lazy: true,
-        
-        
                     pagination: {
                         el: benefitsList.querySelector('.benefits__pagination'),
                         clickable: true,
                     },
-        
-                    // navigation: {
-                    //     nextEl: el.closest('.reviews-tab').querySelector('.reviews__nav--next'),
-                    //     prevEl: el.closest('.reviews-tab').querySelector('.reviews__nav--prev'),
-                    // },
-        
-        
                     breakpoints: {
                         500: {
                             slidesPerView: 1.4,

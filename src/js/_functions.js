@@ -10,11 +10,11 @@
 
 
 // Определение ширины экрана
-import {
-    isMobile,
-    isTablet,
-    isDesktop
-} from './functions/check-viewport';
+// import {
+//     isMobile,
+//     isTablet,
+//     isDesktop
+// } from './functions/check-viewport';
 // if (isDesktop()) {
 //   console.log('desktop')
 // } else if (isTablet()) {
@@ -56,13 +56,15 @@ const modal = new GraphModal();
 
 // Реализация табов
 import GraphTabs from 'graph-tabs';
-const aboutTabs = new GraphTabs('about-tabs');
-aboutTabs.switchTabs(aboutTabs.tabs.querySelector('#about-tabs2'));
-
-const reviewsTabs = new GraphTabs('reviews-tabs');
-reviewsTabs.switchTabs(reviewsTabs.tabs.querySelector('#reviews-tabs2'));
-
-const weMapTabs = new GraphTabs('we-map-tabs');
+if (document.querySelector(`[data-tabs='about-tabs']`)) {
+    const aboutTabs = new GraphTabs('about-tabs');
+}
+if (document.querySelector(`[data-tabs='reviews-tabs']`)) {
+    const reviewsTabs = new GraphTabs('reviews-tabs');
+}
+if (document.querySelector(`[data-tabs='we-map-tabs']`)) {
+    const weMapTabs = new GraphTabs('we-map-tabs');
+}
 
 
 // ========================================================================================

@@ -66,11 +66,9 @@
     &__slide {
         position: relative;
         border-radius: 10px;
-        border: 1px solid hwb(0 100% 0%);
         display: block;
         width: 100%;
         height: auto;
-
         &::before {
             content: '';
             position: absolute;

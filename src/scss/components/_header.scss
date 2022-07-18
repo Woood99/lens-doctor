@@ -56,6 +56,10 @@
             top: -2px;
         }
     }
+
+    @media (max-width:768px) {
+        display: none;
+    }
 }
 
 
@@ -179,6 +183,22 @@
         align-items: center;
         padding-top: 22px;
         padding-bottom: 22px;
+
+        @media (max-width:1050px) {
+            .header-body__schedule {
+                display: none;
+            }
+
+            .back-call__social {
+                display: none;
+            }
+        }
+
+        @media (max-width:768px) {
+            .header-body__btn {
+                display: none;
+            }
+        }
     }
 
     &__logo {}
@@ -291,6 +311,10 @@
         transition: opacity $transitionSpeed $transitionFunction,
             visibility $transitionSpeed $transitionFunction;
         width: 100%;
+       @media (min-width:1051px){
+        max-height: 420px;
+        overflow: auto;
+       }
         @media (max-width:$burgerMenuPx) {
             transform: translateX(-100%);
             transition: opacity $transitionSpeed $transitionFunction,
@@ -332,7 +356,6 @@
         line-height: math.div(24, 15);
         align-items: center;
         position: relative;
-
         padding: 12px 40px 8px;
         background: rgba(27, 29, 50, 0.26);
         margin-bottom: 5px;
@@ -362,7 +385,7 @@
         padding: 10px 0;
         position: relative;
 
-        @media (min-width:$burgerMenuPx) {
+        @media (min-width:1051px) {
             &:before {
                 content: '';
                 position: absolute;

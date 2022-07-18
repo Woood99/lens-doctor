@@ -4,12 +4,12 @@ if (document.querySelector('.we-map-city')) {
             center: [55.00706923755771, 82.91885083672503],
             zoom: 12,
         });
-        map.controls.remove('geolocationControl');
-        map.controls.remove('searchControl');
-        map.controls.remove('trafficControl');
-        map.controls.remove('typeSelector');
-        map.controls.remove('fullscreenControl');
-        map.controls.remove('rulerControl');
+        // map.controls.remove('geolocationControl');
+        // map.controls.remove('searchControl');
+        // map.controls.remove('trafficControl');
+        // map.controls.remove('typeSelector');
+        // map.controls.remove('fullscreenControl');
+        // map.controls.remove('rulerControl');
     };
 
     function weMapInitKemerovo() {
@@ -17,12 +17,12 @@ if (document.querySelector('.we-map-city')) {
             center: [55.35590947018082, 86.08538772929543],
             zoom: 12,
         });
-        map.controls.remove('geolocationControl');
-        map.controls.remove('searchControl');
-        map.controls.remove('trafficControl');
-        map.controls.remove('typeSelector');
-        map.controls.remove('fullscreenControl');
-        map.controls.remove('rulerControl');
+        // map.controls.remove('geolocationControl');
+        // map.controls.remove('searchControl');
+        // map.controls.remove('trafficControl');
+        // map.controls.remove('typeSelector');
+        // map.controls.remove('fullscreenControl');
+        // map.controls.remove('rulerControl');
     };
     if (document.querySelector('#we-map--novosibirsk')) {
         ymaps.ready(weMapInitNovosib);
